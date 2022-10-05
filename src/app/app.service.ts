@@ -8,7 +8,6 @@ export class AppService {
   constructor(private http: HttpClient) {}
 
   getMessages(): Observable<Messages[]> {
-    console.log('getting messages');
     let url = 'https://f6c1-92-119-19-150.ngrok.io/messages';
     return this.http.get<Messages[]>(url);
   }
