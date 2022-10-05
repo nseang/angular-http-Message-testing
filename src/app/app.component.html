@@ -1,0 +1,14 @@
+<h1>Messages</h1>
+
+<input id="userName" type="text" placeholder="Username" [(ngModel)]="username" />
+
+<div *ngIf="messages">
+  <div *ngFor="let message of messages">
+    <p>{{ message.username }}: "{{ message.message }}"</p>
+  </div>
+</div>
+
+<input id="postMessage" type="text" [(ngModel)]="messageToPost" />
+<button (click)="postMessage()">Send Message</button>
+<p *ngIf="messageError">Error: Missing Message</p>
+<p *ngIf="userNameError">Error: Missing UserName</p>
