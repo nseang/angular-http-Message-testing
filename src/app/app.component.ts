@@ -45,7 +45,6 @@ export class AppComponent {
   async getMessages() {
     this.service.getMessages().subscribe((data: Messages[]) => {
       this.messages = data;
-      console.log('message data', data);
     });
   }
 
