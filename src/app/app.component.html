@@ -1,6 +1,11 @@
 <h1>Messages</h1>
 
-<input id="userName" type="text" placeholder="Username" [(ngModel)]="username" />
+<input
+  id="userName"
+  type="text"
+  placeholder="Username"
+  [(ngModel)]="userName"
+/>
 
 <div *ngIf="messages">
   <div *ngFor="let message of messages">

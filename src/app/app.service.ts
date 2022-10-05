@@ -7,12 +7,8 @@ import { Messages } from './app.component';
 export class AppService {
   constructor(private http: HttpClient) {}
 
-  getJoke() {
-    let url = 'https://official-joke-api.appspot.com/random_joke';
-    return this.http.get(url);
-  }
-
   getMessages(): Observable<Messages[]> {
+    console.log('getting messages');
     let url = 'https://f6c1-92-119-19-150.ngrok.io/messages';
     return this.http.get<Messages[]>(url);
   }

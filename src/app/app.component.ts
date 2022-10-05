@@ -32,7 +32,6 @@ export class AppComponent {
       )
       .subscribe({
         next: (res: any) => {
-          console.log('polling');
           if (res) {
             this.messages = res;
           }
@@ -53,10 +52,9 @@ export class AppComponent {
   async postMessage() {
     console.log('post', this.messageToPost);
     if (!this.messageToPost) {
-      this.messageError = true
-    }
-    else if (!this.userName) {
-      this.userNameError = true
+      this.messageError = true;
+    } else if (!this.userName) {
+      this.userNameError = true;
     } else {
       this.userNameError = false;
       this.messageError = false;
@@ -64,8 +62,8 @@ export class AppComponent {
 
     if (!this.messageError && !this.userNameError) {
       await this.service.postMessage(this.messageToPost, this.userName);
-      this.messageToPost = '';
       await this.getMessages();
+      this.messageToPost = '';
     }
   }
 
